@@ -1,0 +1,52 @@
+{% extends "core/base.html" %}
+
+{% block titulo %}
+    Formulario - Floreria
+{% endblock titulo %} 
+{% load static %}
+{% block contenido %}
+<div class="fondo">
+    <div style="padding-left: 1200px;">
+        <button type="button" class="btn btn-dark" onclick="javascript:location.href='{% url 'LOGOUT' %}'">Log Out</button>
+    </div>
+    <div class="letras">
+        <h2>Registro de Flores - Petalos</h2>
+    </div>
+
+    <form method="POST" action="" id="formulario"  enctype="multipart/form-data" style="padding-left: 100px; padding-right: 100px; padding-bottom: 100px;">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="InputName" class="letras2">Nombre de la flor</label>
+          <input type="text" class="form-control" name="InputName" placeholder="Tulipan, Rosa, Clavel, Copihue...">
+        </div>
+        <div class="form-group">
+            <label for="InputPrecio" class="letras2">Precio de la flor</label>
+            <input type="number" class="form-control" name="InputPrecio" placeholder="$999 - 19.990...">
+        </div>
+        <div class="form-group">
+            <label for="InputDescripcion" class="letras2">Descripcion de la flor</label>
+            <textarea class="form-control" name="InputDescripcion" rows="3" placeholder="Flor de origen.... color...."></textarea>
+        </div>
+        <div class="form-group">
+            <label for="InputEstado" class="letras2">Estado</label>
+            <select class="form-control" name="InputEstado">
+              <option>Disponible</option>
+              <option>No Disponible</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="InputStock" class="letras2">Stock</label>
+            <input type="number" class="form-control" name="InputStock" placeholder="Ingresar solo cantidad; ej:'10' ">
+        </div>
+        <div class="form-group">
+            <label for="InputFile" class="letras2">Foto de la flor</label>
+            <input type="file" class="form-control-file" name="InputFile">
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+
+        
+    </form>
+    <div id="respuesta" class="letras" style="text-align: center;">{{msg}}</div>
+</div>
+
+{% endblock contenido %}

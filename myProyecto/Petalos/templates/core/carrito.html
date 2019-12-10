@@ -1,0 +1,57 @@
+{% extends "core/base.html" %}
+
+{% block titulo %}
+    Carrito - Floreria
+{% endblock titulo %} 
+
+{% load static %}
+
+{% block contenido %}
+<body class="fondo">
+    <div style="padding-left: 1200px;">
+        <button type="button" class="btn btn-dark" onclick="javascript:location.href='{% url 'LOGOUT' %}'">Log Out</button>
+    </div>
+    <div class="central" style="font-family: cursive; color: black; text-align: center;">
+        <h3> Carrito de Compras </h3>
+    </div>
+    <center>
+    <div class="container">
+        <table class="table" border="7" style="background-color: pink;">
+            <thead class="table table-striped">
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Operacion</th>
+                </tr>
+            </thead>
+            <tbody>    
+                {% for l in x %} 
+                <tr>
+                    <td>{{l.nombre}}</td>
+                    <td>${{l.precio}} CLP</td>
+                    <td>{{l.cantidad}}</td>
+                    <td>${{l.total}} CLP</td>
+                    <td>
+                        <input type="button" value="+"onclick=" javascript:location.href='{% url 'CARRO_MAS' l.nombre %}'">
+                        <input type="button" value="-" onclick="javascript:location.href='{% url 'CARRO_MENOS' l.nombre %}'">
+                    </td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <th colspan="3">Total</th>
+                    <th>${{total}} CLP</th>  
+                    <th>
+                        <input type="button" value="Grabar Carro" onclick="javascript:location.href='{% url 'GRABAR_CARRO' %}'" >
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div  role="alert">
+        <h4 class="alert-heading">{{mensaje}}</h4>
+    </div>
+</body>
+    </center>
+{% endblock contenido %}

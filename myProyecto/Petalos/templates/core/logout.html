@@ -1,0 +1,17 @@
+{% extends "core/base.html" %}
+
+{% block titulo %}
+    Log Out - Floreria
+{% endblock titulo %} 
+
+{% load static %}
+
+{% block contenido %}
+<body class="fondo">
+    
+
+    <div class="central" style="text-align: center;">
+        <button type="button" class="btn btn-dark btn-lg" onclick="javascript:location.href='{% url 'LOGIN' %}'">Login</button>
+    </div>
+</body>
+{% endblock contenido %}

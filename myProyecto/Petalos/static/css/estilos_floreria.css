@@ -1,0 +1,59 @@
+ol, ul{
+    list-style: none;
+}
+
+nav li{
+    float: left;
+    list-style: none;
+    display: block;
+    background-color: pink;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 15px;
+}
+nav li a{
+    text-decoration: none;
+    color: white;
+    font-family: cursive;
+}
+nav {
+    background-color: pink;
+    width: 100%;
+    overflow: auto;
+}
+nav li:hover {
+    list-style: none;
+    background-color: whitesmoke;
+    color: black;
+    transition: 0.5s;
+}
+
+nav li:hover a{
+    list-style: none;
+    background-color: whitesmoke;
+    color: pink;
+    
+}
+
+.logo{
+    width: 60px;height: 60px;
+    margin-right: 50px;
+    image-resolution: url(../img/logo.png);
+    float: right;
+}
+
+.fondo{
+    background: url(../img/fondo3.jpg) #000;
+}
+
+.letras{
+    font-family: cursive;
+    color: black;
+    font-size: xx-large;
+    text-align: center;
+}
+
+.letras2{
+    font-family: cursive;
+    color: black;
+}
+
